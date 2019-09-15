@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NEWSHIGHLIGHTS</title>
+</head>
+<body>
+    <h3> NEWS</h3>
+    <h1>Sports</h1>
+     <ul>
+        {% for source in sports %}
+            <h2>{{ source.name}}</h2>
+            <li>{{ source.description}}</li>
+            <li>{{ source.url}}</li>
+            <li>{{ source.category}}</li>
+            <li>{{ source.country}}</li>
+        {% endfor %}
+    </ul>
+    <h1>Entertainment</h1>
+    <ul>
+       {% for enter in entertainment %}
+           <h2>{{ enter.name}}</h2>
+           <li>{{ enter.description}}</li>
+           <li>{{ enter.url}}</li>
+           <li>{{ enter.category}}</li>
+           <li>{{ enter.country}}</li>
+       {% endfor %}
+   </ul>
+   <h1>Technology</h1>
+   <ul>
+      {% for tech in technology %}
+          <h2>{{ tech.name}}</h2>
+          <li>{{ tech.description}}</li>
+          <li>{{ tech.url}}</li>
+          <li>{{ tech.category}}</li>
+          <li>{{ tech.country}}</li>
+      {% endfor %}
+  </ul>
+  <h1>Business</h1>
+  <ul>
+     {% for busin in business %}
+         <h2>{{ busin.name}}</h2>
+         <li>{{ busin.description}}</li>
+         <li>{{ busin.url}}</li>
+         <li>{{ busin.category}}</li>
+         <li>{{ busin.country}}</li>
+     {% endfor %}
+ </ul>
+ <h1>General</h1>
+ <ul>
+    {% for gen in general %}
+        <h2>{{ gen.name}}</h2>
+        <li>{{ gen.description}}</li>
+        <li>{{ gen.url}}</li>
+        <li>{{ gen.category}}</li>
+        <li>{{ gen.country}}</li>
+    {% endfor %}
+</ul>
+ <h1>Health</h1>
+ <ul>
+    {% for hel in health %}
+        <h2>{{ hel.name}}</h2>
+        <li>{{ hel.description}}</li>
+        <li>{{ hel.url}}</li>
+        <li>{{ hel.category}}</li>
+        <li>{{ hel.country}}</li>
+    {% endfor %}
+</ul>
+</body>
+</html>
