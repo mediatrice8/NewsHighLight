@@ -16,3 +16,21 @@ def configure_request(app):
     articles_url = app.config['ARTICLES_BASE_URL']
     # news_headlines_url = app.config['NEWS_HEADLINES_BASE_URL']
     # search_url = app.config['SEARCH_BASE_URL']
+    
+def get_source(category):
+    '''
+    Function that gets the json response to our url request
+    '''
+    get_source_url = base_url.format(category,api_key)
+    with urllib.request.urlopen(get_source_url) as url:
+        get_source_data = url.read()
+        get_source_response = json.loads(get_source_data)
+
+        source_results = None
+
+        if get_source_response['sources']:
+            source_results_list = get_source_response['sources']
+            source_results  = process_results(source_results_list)
+
+
+    return source_results
