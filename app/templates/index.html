@@ -1,72 +1,126 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>NEWSHIGHLIGHTS</title>
-</head>
-<body>
-    <h3> NEWS</h3>
-    <h1>Sports</h1>
-     <ul>
-        {% for source in sports %}
-            <h2>{{ source.name}}</h2>
-            <li>{{ source.description}}</li>
-            <li>{{ source.url}}</li>
-            <li>{{ source.category}}</li>
-            <li>{{ source.country}}</li>
+{% extends 'base.html' %}
+{% block content %}
+
+
+<div class="container-fluid">
+    <div class="row">
+        <h2 style="text-align: center;color:#056b5b;">General news </h2>
+        <hr>
+        <img src="https://image.shutterstock.com/image-vector/news-concept-thin-line-pixel-600w-573975388.jpg">
+        {% for gen in general %}
+        <div class="col-md-2">
+            <div class="thumbnail">
+                <div class="details">
+                    <h4>{{gen.name}}</a></h4>
+                    <p>{{gen.description | truncate(100)}}</p>
+                    <p><a href="/article/{{ gen.id}}">Read {{gen.name}} Articles</a></p>
+                </div>
+            </div>
+        </div>
         {% endfor %}
-    </ul>
-    <h1>Entertainment</h1>
-    <ul>
-       {% for enter in entertainment %}
-           <h2>{{ enter.name}}</h2>
-           <li>{{ enter.description}}</li>
-           <li>{{ enter.url}}</li>
-           <li>{{ enter.category}}</li>
-           <li>{{ enter.country}}</li>
-       {% endfor %}
-   </ul>
-   <h1>Technology</h1>
-   <ul>
-      {% for tech in technology %}
-          <h2>{{ tech.name}}</h2>
-          <li>{{ tech.description}}</li>
-          <li>{{ tech.url}}</li>
-          <li>{{ tech.category}}</li>
-          <li>{{ tech.country}}</li>
-      {% endfor %}
-  </ul>
-  <h1>Business</h1>
-  <ul>
-     {% for busin in business %}
-         <h2>{{ busin.name}}</h2>
-         <li>{{ busin.description}}</li>
-         <li>{{ busin.url}}</li>
-         <li>{{ busin.category}}</li>
-         <li>{{ busin.country}}</li>
-     {% endfor %}
- </ul>
- <h1>General</h1>
- <ul>
-    {% for gen in general %}
-        <h2>{{ gen.name}}</h2>
-        <li>{{ gen.description}}</li>
-        <li>{{ gen.url}}</li>
-        <li>{{ gen.category}}</li>
-        <li>{{ gen.country}}</li>
-    {% endfor %}
-</ul>
- <h1>Health</h1>
- <ul>
-    {% for hel in health %}
-        <h2>{{ hel.name}}</h2>
-        <li>{{ hel.description}}</li>
-        <li>{{ hel.url}}</li>
-        <li>{{ hel.category}}</li>
-        <li>{{ hel.country}}</li>
-    {% endfor %}
-</ul>
-</body>
-</html>
+    </div>
+</div>
+<hr>
+
+<div class="container-fluid">
+    <div class="row">
+        <h2 style="text-align: center;color:#056b5b;">Business news </h2>
+        <hr>
+        <img src="https://travel.state.gov/content/travel/en/us-visas/business/_jcr_content/tsg-rwd-content-page-parsysxxx/slideshow.img.png/1512148994695.png" alt="">
+        {% for busin in business %}
+        <div class="col-md-2">
+            <div class="thumbnail">
+                <div class="details">
+                    <h4>{{busin.name}}</h4>
+                    <p>{{busin.description | truncate(100)}}</p>
+                    <p><a href="/article/{{ busin.id}}">Read {{busin.name}} Articles</a></p>
+
+                </div>
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<hr>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <h2 style="text-align: center;color:#056b5b;">Sports news </h2>
+        <hr>
+        <img src="https://image.shutterstock.com/image-vector/fitness-people-colorful-web-icon-260nw-523904158.jpg" alt="">
+        {% for source in sports %}
+        <div class="col-md-2">
+            <div class="thumbnail">
+                <div class="details">
+                    <h4>{{source.name}}</a></h4>
+                    <p>{{source.description | truncate(100)}}</p>
+                    <p><a href="/article/{{ source.id}}">Read {{source.name}} Articles</a></p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<hr>
+
+<div class="container-fluid">
+    <div class="row">
+        <h2 style="text-align: center;color:#056b5b;">Technology news </h2>
+        <hr>
+        <img src="https://www.semtech.com/uploads/slideshow/HP-carousel-image-Semtech_video2.jpg" alt="">
+        {% for tech in technology %}
+        <div class="col-md-2">
+            <div class="thumbnail">
+                <div class="details">
+                    <h4>{{tech.name}}</a></h4>
+                    <p>{{tech.description | truncate(100)}}</p>
+                    <p><a href="/article/{{ tech.id}}">Read {{tech.name}} Articles</a></p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<hr>
+
+
+<h2 style="text-align: center;color:#056b5b;">Entertainment news </h2>
+<hr>
+<img src="http://www.midind-ime.com/uploads/2/3/7/4/23749784/14-coyote-09636-entertainment-header-1000x356-72dpi_orig.jpg" alt="">
+{% for enter in entertainment %}
+<div class="col-md-2">
+    <div class="thumbnail">
+        <div class="details">
+            <h4>{{enter.name}}</a></h4>
+            <p>{{enter.description | truncate(100)}}</p>
+            <p><a href="/article/{{ enter.id}}">Read {{enter.name}} Articles</a></p>
+        </div>
+    </div>
+</div>
+{% endfor %}
+</div>
+</div>
+<hr>
+<div class="container-fluid">
+    <div class="row">
+        <h2 style="text-align: left;color:#056b5b;">health news </h2>
+        <hr>
+        <img src="https://image.shutterstock.com/image-photo/health-insurance-concept-doctor-hospital-260nw-1039885318.jpg" alt="">
+        {% for hel in health %}
+        <div class="col-md-2">
+            <div class="thumbnail">
+                <div class="details">
+                    <h4>{{hel.name}}</a></h4>
+                    <p>{{hel.description | truncate(100)}}</p>
+                    <p><a href="/article/{{ hel.id}}">Read {{hel.name}} Articles</a></p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<hr>
+
+{%  endblock %}
