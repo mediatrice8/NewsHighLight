@@ -12,3 +12,10 @@ We are required to  install the python3.6
 - python 3.6
 - Run chmod a+x start.py
 - Run ./start.py
+## Technology used
+* python3.6
+* HTML
+* Bootstrap
+### Contact and Lisence
+For more information ,write an email to kampiremediatrice@gmail.com
+@copy Right 2019/ Media free
